@@ -1,0 +1,37 @@
+{
+  "name": "cooking-recipe-aid",
+  "version": "1.0.0",
+  "description": "A cooking and recipe aid where you can create and update recipes, and keep track of what step of the process you're on",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heltan/cooking-recipe-aid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heltan/cooking-recipe-aid/issues"
+  },
+  "homepage": "https://github.com/heltan/cooking-recipe-aid#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  }
+}
