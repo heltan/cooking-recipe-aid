@@ -3,26 +3,43 @@ import ReactDOM from 'react-dom'
 
 function AddRecipe() {
     //state variable that will hold the new recipe
-    const [title, setTitle] = useState(0);
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState('');
+    const [ingrediants, setIngrediants] = useState('');
+    const [directions, setDirections] = useState('');
 
     return (
         <div>
-            <p>You clicked {title} times</p>
-            <button onClick = {()=> setTitle(title + 1)}>add new recipe</button>
+        
             <form>
                 <label for='title'></label>
                 <br></br>
-                <input type='text' id='recipe-title' placeholder='recipe title'></input>
+                <input type='text' id='recipe-title' placeholder='recipe title' onChange = { e=> {
+                    setTitle(e.target.value);
+                   
+                }}></input>
                 <label for='author'></label>
                 <br></br>
-                <input type='text' id='recipe-author' placeholder='recipe author'></input>
+                <input type='text' id='recipe-author' placeholder='recipe author' onChange = { e=> {
+                    setAuthor(e.target.value);
+                    
+                }}></input>
                 <label for='ingrediants'></label>
                 <br></br>
-                <textarea id='recipe-ingrediants' placeholder='ingrediants'></textarea>
+                <textarea id='recipe-ingrediants' placeholder='ingrediants' onChange = { e=> {
+                    setIngrediants(e.target.value);
+                    
+                }}></textarea>
                 <label for='directions'></label>
                 <br></br>
-                <textarea id='recipe-directions' placeholder='directions'></textarea>
+                <textarea id='recipe-directions' placeholder='directions' onChange = { e=> {
+                    setDirections(e.target.value);
+                    
+                }}></textarea>
             </form>
+            <button onClick = {()=> {
+                console.log(title, author, ingrediants, directions)
+            }}>add new recipe</button>
         </div>
     )
 }
