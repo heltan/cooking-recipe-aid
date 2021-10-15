@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
-import ReactDOM from 'react-dom'
+const axios = require('axios');
+// const mongo123 = require('./mongoDatabase.js')
+// import mongo from './mongoDatabase.js'
+// import ReactDOM from 'react-dom'
 
 function AddRecipe() {
     //state variable that will hold the new recipe
@@ -38,7 +41,13 @@ function AddRecipe() {
                 }}></textarea>
             </form>
             <button onClick = {()=> {
-                console.log(title, author, ingrediants, directions)
+                console.log(title, author, ingrediants, directions);
+                axios.get('http://localhost:3000/')
+                .then(response => {
+                    console.log('response', response.data)
+                })
+                
+           
             }}>add new recipe</button>
         </div>
     )
