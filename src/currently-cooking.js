@@ -10,13 +10,17 @@ function CurrentlyCooking (currentRecipe) {
     useEffect(()=> {
         setCurrentRecipeJSX('')
         let recipe =  currentRecipe.currentRecipe;
-    
+            if (recipe) {
+
+
+            
             console.log('recipe, ', recipe)
             //now we will create a recipe
             let recipeArray = [];
             //put the title and author
             let titleAuthorInfo = <div>
                 <h4> {recipe.title}</h4><nobr>by {recipe.author}</nobr>
+                <h5>Ingrediants:</h5>
             </div>
             recipeArray.push(titleAuthorInfo);
         
@@ -26,36 +30,48 @@ function CurrentlyCooking (currentRecipe) {
             if (recipe.ingrediants !== undefined) {
                 let ingrediantsArr = recipe.ingrediants.split('\n');
                 for (let item in ingrediantsArr) {
-                    console.log('item', ingrediantsArr[item])
                     ingrediants.push(<div>
-               
 
-                        {/* <label class="switch">
-                        <input type="checkbox" name={ingrediantsArr[item].id} 
-                        value = {ingrediantsArr[item].id} id = {ingrediantsArr[item].id}>
-                            <span class="slider round"></span>
-                            
-                            
-                            
-                            </label>
-                         */}
                          <label class="switch">
-  <input type="checkbox"/>
-  <span class="slider round"></span>
-</label>
+                        <input type="checkbox"/>
+                        <span class="slider round"></span>
+                        </label>
                          <nobr>   {ingrediantsArr[item]}</nobr>
-                        
-                    
                     </div>)
                 }
             }
-            recipeArray.push(ingrediants)
-            console.log('recipe array', recipeArray)
-         
+
+            //do the same for the directions
+            let directions = [];
+            directions.push(<h5>Directions: </h5>)
+            if (recipe.directions) {
+
+                let directionsArr = recipe.directions.split('\n');
+                for (let item in directionsArr) {
+             
+                        directions.push(<div>
+                            <label class="switch">
+                        <input type="checkbox"/>
+                        <span class="slider round"></span>
+                        </label>
+                           <nobr> {directionsArr[item]} </nobr>
+
+                        </div>)
+             
+                    
+                }
+            }
+            recipeArray.push(ingrediants);
+            recipeArray.push(directions)
+            
+
+
+
+
                 setCurrentRecipeJSX(recipeArray)
 
         
- 
+            }
     
 
     }, [currentRecipe.currentRecipe])
