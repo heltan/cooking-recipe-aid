@@ -1,6 +1,20 @@
 body {
     background-color: pink;
 }
+h1 {
+    color: purple;
+    border-style: solid;
+    border-radius: 3em;
+    padding: 1em;
+}
+h1:hover {
+    color:rebeccapurple
+
+}
+.recipes:hover {
+    background-color: plum;
+    margin-left: .6em;
+}
 /* The switch - the box around the slider */
 .switch {
     position: relative;
