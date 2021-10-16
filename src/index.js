@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import AddRecipe from './add-recipe.js';
+import AllRecipes from './all-recipes.js';
 
 class App extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
                 </div>
 
                 <AddRecipe/>
+                <AllRecipes/>
             </div>
         );
     }

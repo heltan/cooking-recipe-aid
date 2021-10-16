@@ -40,11 +40,13 @@ function AddRecipe() {
                     
                 }}></textarea>
             </form>
-            <button onClick = {()=> {
+            <button onClick = { ()=> {
                 console.log(title, author, ingrediants, directions);
-                axios.get('http://localhost:3000/')
+                let newRecipeData = {title, author, ingrediants, directions}
+           
+                axios.post('http://localhost:3000/addRecipe', newRecipeData)
                 .then(response => {
-                    console.log('response', response.data)
+                    console.log('response', response)
                 })
                 
            
