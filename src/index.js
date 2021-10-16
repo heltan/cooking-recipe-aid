@@ -18,7 +18,7 @@ function App () {
 
                 <AddRecipe/>
                 <AllRecipes setCurrentDish = {setCurrentDish}/>
-                <CurrentlyCooking currentDish = {currentDish}/>
+
             </div>
         );
     
