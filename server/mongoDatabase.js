@@ -36,6 +36,7 @@ async function main(command, id, document) {
       const findAll = await collection.find().forEach(x => {
           obj[x.id] = x;
       });
+      console.log('obj', obj)
      return obj;
   }
 
@@ -43,10 +44,10 @@ async function main(command, id, document) {
   return 'done.';
 }
 
-main()
-  .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close())
+// main()
+//   .then(console.log)
+//   .catch(console.error)
+//   .finally(() => client.close())
 
 
 

@@ -1,14 +1,15 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom'
 import AddRecipe from './add-recipe.js';
 import AllRecipes from './all-recipes.js';
+import CurrentlyCooking from './currently-cooking.js';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
+import React, {useState, useEffect} from 'react';
+
+function App () {
+
+    const [currentDish, setCurrentDish] = useState('');
+    console.log('current dish', currentDish)
         return (
             <div id='body'>
                 <div id='header'>
@@ -16,10 +17,11 @@ class App extends React.Component {
                 </div>
 
                 <AddRecipe/>
-                <AllRecipes/>
+                <AllRecipes setCurrentDish = {setCurrentDish}/>
+                <CurrentlyCooking currentDish = {currentDish}/>
             </div>
         );
-    }
+    
 }
 
 ReactDOM.render(<App/>, document.getElementById('app'));

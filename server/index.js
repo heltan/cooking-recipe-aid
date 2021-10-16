@@ -27,8 +27,10 @@ app.post('/addRecipe', async (req, res) => {
 
 });
 app.get('/findAll', async (req, res) => {
+    console.log('getting into findall')
     let result = await mongo.main('findAll');
-    return result;
+
+    res.send(result)
 })
 app.listen(3000, ()=> {
     console.log('server listening on port 3000');
