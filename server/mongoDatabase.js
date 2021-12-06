@@ -19,7 +19,6 @@ const dbName = 'recipesDb';
 async function main(command, id, document) {
   // Use connect method to connect to the server
   await client.connect();
-  console.log('Connected successfully to server');
   const db = client.db(dbName);
   const collection = db.collection('documents');
 
@@ -36,20 +35,12 @@ async function main(command, id, document) {
       const findAll = await collection.find().forEach(x => {
           obj[x.id] = x;
       });
-      console.log('obj', obj)
      return obj;
   }
 
 
   return 'done.';
 }
-
-// main()
-//   .then(console.log)
-//   .catch(console.error)
-//   .finally(() => client.close())
-
-
 
 
 module.exports.main = main;
