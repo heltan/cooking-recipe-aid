@@ -45,9 +45,7 @@ function AddRecipe() {
                 let newRecipeData = {title, author, ingrediants, directions}
            
                 axios.post('http://localhost:3000/addRecipe', newRecipeData)
-                .then(response => {
-                    console.log('response', response)
-                })
+           
                 
            
             }}>add new recipe</button>
