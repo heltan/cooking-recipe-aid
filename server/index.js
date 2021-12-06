@@ -12,24 +12,18 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
-    console.log('you are hitting the get????');
     res.send('you hit me on port 3000')
 })
 
 app.post('/addRecipe', async (req, res) => {
-    console.log('recipe being added');
     let recipeData = req.body;
     let id = {id : req.body.title + req.body.author};
     //want to send this to mongo
     await mongo.main('addRecipe', id, recipeData);
-
-    
-
 });
 app.get('/findAll', async (req, res) => {
-    console.log('getting into findall')
-    let result = await mongo.main('findAll');
 
+    let result = await mongo.main('findAll');
     res.send(result)
 })
 app.listen(3000, ()=> {
