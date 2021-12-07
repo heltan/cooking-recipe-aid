@@ -1,2 +1,5 @@
 # cooking-recipe-aid
-A cooking and recipe aid where you can create and update recipes, and keep track of what step of the process you're on
+A cooking and recipe aid where users can create and update recipes, as well as keep track on what step of the recipe process they're on!
+Web-based currently.
+
+
