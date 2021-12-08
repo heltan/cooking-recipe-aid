@@ -50,7 +50,6 @@ function CurrentlyCooking (currentRecipe) {
                             <span class="slider round"></span>
                             </label>
                            <nobr> {directionsArr[item]} </nobr>
-
                         </div>)
                 }
             }
