@@ -12,9 +12,6 @@ function CurrentlyCooking (currentRecipe) {
         let recipe =  currentRecipe.currentRecipe;
             if (recipe) {
 
-
-            
-            console.log('recipe, ', recipe)
             //now we will create a recipe
             let recipeArray = [];
             //put the title and author
@@ -45,35 +42,22 @@ function CurrentlyCooking (currentRecipe) {
             let directions = [];
             directions.push(<h5>Directions: </h5>)
             if (recipe.directions) {
-
                 let directionsArr = recipe.directions.split('\n');
                 for (let item in directionsArr) {
-             
                         directions.push(<div>
                             <label class="switch">
-                        <input type="checkbox"/>
-                        <span class="slider round"></span>
-                        </label>
+                            <input type="checkbox"/>
+                            <span class="slider round"></span>
+                            </label>
                            <nobr> {directionsArr[item]} </nobr>
 
                         </div>)
-             
-                    
                 }
             }
             recipeArray.push(ingrediants);
             recipeArray.push(directions)
-            
-
-
-
-
                 setCurrentRecipeJSX(recipeArray)
-
-        
             }
-    
-
     }, [currentRecipe.currentRecipe])
     return (<div>
         <h3>currently cooking: </h3>
