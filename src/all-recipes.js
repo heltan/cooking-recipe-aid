@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { render } from 'react-dom';
 import CurrentlyCooking from './currently-cooking.js';
 const axios = require('axios');
 
@@ -17,7 +16,6 @@ function AllRecipes (setCurrentDish) {
         findAllRecipes();
         
     }, [])
-
     function findAllRecipes () {
         axios.get('http://localhost:3000/findAll')
         .then(response=> {
@@ -44,11 +42,7 @@ function AllRecipes (setCurrentDish) {
         }
         let recipeJSX = <div>{recipeArray}</div>;
         setRecipeJSX(recipeJSX);
- 
     }
-
-
-    
     return (<div>
         <h2>All Recipes</h2>
         {recipeJSX}
