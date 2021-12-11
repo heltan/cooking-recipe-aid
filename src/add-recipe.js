@@ -38,12 +38,8 @@ function AddRecipe() {
                 }}></textarea>
             </form>
             <button onClick = { ()=> {
-               
                 let newRecipeData = {title, author, ingrediants, directions}
                 axios.post('http://localhost:3000/addRecipe', newRecipeData)
-           
-                
-           
             }}>add new recipe</button>
         </div>
     )
