@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: whitesmoke;
 }
 h1 {
     color: purple;
@@ -56,7 +56,7 @@ h1:hover {
   }
   
   input:checked + .slider {
-    background-color: #db21f3af;
+    background-color: plum;
   }
   
   input:focus + .slider {
